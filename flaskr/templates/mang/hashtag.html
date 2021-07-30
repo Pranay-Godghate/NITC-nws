@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Add Hashtags!!{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">Hashtag</label>
+    <input name="hashtag" id="title" value="{{ request.form['hashtag'] }}">
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

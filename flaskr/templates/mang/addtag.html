@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}ADD HASHTAGS!!{% endblock %}</h1>
+  <!{% if g.user %}>
+    <!<a class="action" href="{{ url_for('mang.create') }}"><! ADD</a>
+  <!{% endif %}>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  {% for info in infos %}
+    <article class="post">
+      <header>
+        <div>
+        <label class="form-check-label" for="tag" > {{info[1]}} </label>
+      <input type="checkbox" id="tag" value="{{info[1]}}" name="addtag" /> 
+        
+         <div class="about" ></div>
+          
+        </div>
+        
+      </header>
+     
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+   {% endfor %}
+    <button type="submit" value="save">ADD</button>
+    </form>
+{% endblock %}
