@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+  <h1>{% block title %}Search{% endblock %}</h1>
+  {% endblock %}
+
+{% block content %}
+  {% for post in posts %}
+    <article class="post">
+      <header>
+        <div>
+        
+          <h1><a href="{{url_for('mang.details', pid=post[0])}}">{{ post[1] }}</a></h1>
+          
+          
+          <div class="about">by {{ post[5] }} </div>
+        
+          <td class="about"> {{ post[3].strftime('%d-%m-%Y') }}</td>
+          <a class="action" href="{{ url_for('mang.hashtag',pid=post[0])}}">#HASHTAG</a>
+        </div>
+        
+      </header>
+      
+    </article>
+    {% if not loop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+{% endblock %}

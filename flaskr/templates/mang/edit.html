@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}EDIT{% endblock %}</h1>
+  <!{% if g.user %}>
+    <!<a class="action" href="{{ url_for('mang.create') }}"><! ADD</a>
+  <!{% endif %}>
+{% endblock %}
+
+{% block content %}
+  
+    <article class="post">
+      <header>
+        <div>
+        
+          
+          <form action="{{url_for('mang.edit', pid=id)}}" method="POST">
+  <div class="about">
+    <label for = "title" class="about">Title</label><br/>
+    <textarea rows="1" id="title" class="about"
+              name="title">
+      {{title}}
+    </textarea>
+          
+        </div>
+        
+      </header>
+      <form action="{{url_for('mang.edit', pid=id)}}" method="POST">
+  <div class="about">
+    <label for = "description" class="about">Description</label><br/>
+    <textarea rows="10" id="description" class="about"
+              name="description">
+      {{body}}
+    </textarea>
+  </div>
+  
+      
+      
+   
+  
+  <p>
+  <button type="submit" class="post">Update</button>
+  
+    </article>
+    
+      <hr>
+ 
+{% endblock %}
