@@ -9,7 +9,7 @@
   </form></id>
   
 
-  <h1>{% block title %}NOTES{% endblock %}</h1>
+  <h1>{% block title %}NITC NEWS{% endblock %}</h1>
   {% if g.user %}
     <a class="action" href="{{ url_for('mang.create') }}">ADD</a>
     
@@ -28,7 +28,7 @@
           <div class="about">by {{ post[5] }} </div>
         
           <div class="about"> {{ post[3].strftime('%d-%m-%Y') }}</div>
-          <a class="action" href="{{ url_for('mang.hashtag',pid=post[0])}}">#HASHTAG</a>
+          <a class="action" href="{{ url_for('mang.hashtag',pid=post[0])}}">ADD COMMENT OR TAGS</a>
         </div>
         
       </header>

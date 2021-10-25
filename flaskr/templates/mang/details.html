@@ -14,7 +14,7 @@
         <div>
         
           <h1>{{ title }}</h1>
-          <div class="about">Note is added by {{ username }} </div>
+          <div class="about">NEWS is added by {{ username }} </div>
         
           <td class="about"> {{ created.strftime('%d-%m-%Y') }}</td>
         </div>
@@ -26,7 +26,7 @@
   {% endfor %}
   <p>
   <a class="about" href="{{url_for('mang.edit', pid=id)}}">Edit</a>
-  <a class="about" href="{{url_for('mang.add_hashtag',pid=id)}}">ADD #tag</a>
+  <a class="about" href="{{url_for('mang.add_hashtag',pid=id)}}">ADD #tag or comment</a>
   </p>
   
     </article>
